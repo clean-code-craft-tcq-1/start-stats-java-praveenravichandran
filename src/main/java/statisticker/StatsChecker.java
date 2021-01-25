@@ -14,7 +14,7 @@ public class StatsChecker {
   
   public void checkAndAlert(List<Float> numbers) {
     Statistics.Stats s = Statistics.getStatistics(numbers);
-    if(s.max != Float.NaN || s.max > maxThreshold || alerters.length > 0) {
+    if(s.max != Float.NaN && s.max > maxThreshold && alerters.length > 0) {
         for(IAlerter alerter :  alerters) {
           alerter.alert();
         }

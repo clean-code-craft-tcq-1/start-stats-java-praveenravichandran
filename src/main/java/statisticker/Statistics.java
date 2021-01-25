@@ -11,7 +11,7 @@ public class Statistics
       public float min;
       
       private void findMax(List<Float> numbers) {
-        if (numbers == null ||numbers.size() == 0 || numbers.contains(Float.NaN)) {
+        if (numbers == null || numbers.isEmpty()|| numbers.contains(Float.NaN)) {
           max = Float.NaN;
         } else {
           Collections.sort(numbers);
@@ -20,7 +20,7 @@ public class Statistics
       }
       
       private void findMin(List<Float> numbers) {
-        if (numbers == null || numbers.size() == 0 || numbers.contains(Float.NaN)) {
+        if (numbers == null || numbers.isEmpty() || numbers.contains(Float.NaN)) {
           min = Float.NaN;
         } else {
           Collections.sort(numbers);
@@ -31,7 +31,7 @@ public class Statistics
       private void calculateAverage(List<Float> numbers) {
         float sum = 0.0f;
         
-        if (numbers.contains(Float.NaN)) {
+        if (numbers == null || numbers.contains(Float.NaN)) {
           average = Float.NaN;
         } else {
           for (Float number: numbers) {
